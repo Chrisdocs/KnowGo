@@ -7,7 +7,7 @@ fetch(weatherAPI).then(function(response){
     });
 });
 
-var placesAPI = "";
+var placesAPI = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBFQoDDuP1ZNUkjxAFn_jDL3fYHL3IsSug&callback=initMap";
 
 fetch(placesAPI).then(function(response){
     response.json().then(function(data){
