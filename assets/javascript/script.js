@@ -7,9 +7,15 @@ fetch(weatherAPI).then(function(response){
     });
 });
 
-var placesAPI = "https://maps.googleapis.com/maps/api/js?key=AIzaSyBFQoDDuP1ZNUkjxAFn_jDL3fYHL3IsSug&callback=initMap";
+var userLocation = "30.27877864722929, -97.7495812011866"
 
-fetch(placesAPI).then(function(response){
+
+var placesAPI = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBFQoDDuP1ZNUkjxAFn_jDL3fYHL3IsSug&location=" + userLocation + "&radius=1000";
+
+fetch(placesAPI, {
+    mode: 'cors',
+    credentials: 'include'
+}).then(function(response){
     response.json().then(function(data){
         console.log(data);
     });
