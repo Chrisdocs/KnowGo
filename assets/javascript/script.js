@@ -7,16 +7,66 @@ fetch(weatherAPI).then(function(response){
     });
 });
 
-var userLocation = "30.27877864722929, -97.7495812011866"
+var url = "https://en.wikipedia.org/w/api.php"; 
 
+function getLocation() {
+    if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+    alert("Geolocation is not supported by this browser.");
+    }
+};
 
-var placesAPI = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyBFQoDDuP1ZNUkjxAFn_jDL3fYHL3IsSug&location=" + userLocation + "&radius=1000";
+function showPosition(position) {
+    var userLocationLat = position.coords.latitude;
+    var userLocationLong = position.coords.longitude;
+    console.log(userLocationLat);
+    console.log(userLocationLong);
+    
+    var params = {
+        action: "query",
+        list: "geosearch",
+        prop: "pageimages",
+        gscoord: userLocationLat + "|" + userLocationLong,
+        gsradius: "10000",
+        gslimit: "2",
+        format: "json",
+        prop: "coordinates|pageimages",
+    };
+    
+    url = url + "?origin=*";
+    Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
+    console.log(url);
+    fetch(url)
+    .then(function(response){return response.json();})
+    .then(function(response) {
+        var pages = response.query.geosearch;
+        console.log(pages);
+        for (var place in pages) {
+            console.log(pages[place].title);
+        }
+    })
+    .catch(function(error){console.log(error);});
+// var params = {
+//     action: "query",
+//     generator: "geosearch",
+//     prop: "coordinates|pageimages",
+//     ggscoord: userLocationLat + "|" + userLocationLong,
+//     format: "json",
+//     coprimary: "all"
+// };
 
-fetch(placesAPI, {
-    mode: 'cors',
-    credentials: 'include'
-}).then(function(response){
-    response.json().then(function(data){
-        console.log(data);
-    });
-});
+// url = url + "?origin=*";
+// Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
+// console.log(url);
+// fetch(url)
+//     .then(function(response){return response.json();})
+//     .then(function(response) {
+//         console.log(response);
+//         var pages = response.query.pages;
+//         for (var page in pages) {
+//             console.log(pages[page].title + ": " + pages[page].thumbnail.source);
+//         }
+//     })
+//     .catch(function(error){console.log(error);});
+};
