@@ -24,49 +24,28 @@ function showPosition(position) {
     console.log(userLocationLong);
     
     var params = {
-        action: "query",
-        list: "geosearch",
-        prop: "pageimages",
-        gscoord: userLocationLat + "|" + userLocationLong,
-        gsradius: "10000",
-        gslimit: "2",
-        format: "json",
-        prop: "coordinates|pageimages",
+            "action": "query",
+            "format": "json",
+            "prop": "pageimages|coordinates|categories",
+            "list": "",
+            "generator": "geosearch",
+            "ggscoord": "30.2711286|-97.7436995",
+            "ggsradius": "10000",
+            "ggslimit": "10"
     };
     
+
     url = url + "?origin=*";
     Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
     console.log(url);
     fetch(url)
-    .then(function(response){return response.json();})
-    .then(function(response) {
-        var pages = response.query.geosearch;
-        console.log(pages);
-        for (var place in pages) {
-            console.log(pages[place].title);
-        }
-    })
-    .catch(function(error){console.log(error);});
-// var params = {
-//     action: "query",
-//     generator: "geosearch",
-//     prop: "coordinates|pageimages",
-//     ggscoord: userLocationLat + "|" + userLocationLong,
-//     format: "json",
-//     coprimary: "all"
-// };
-
-// url = url + "?origin=*";
-// Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
-// console.log(url);
-// fetch(url)
-//     .then(function(response){return response.json();})
-//     .then(function(response) {
-//         console.log(response);
-//         var pages = response.query.pages;
-//         for (var page in pages) {
-//             console.log(pages[page].title + ": " + pages[page].thumbnail.source);
-//         }
-//     })
-//     .catch(function(error){console.log(error);});
+        .then(function(response){return response.json();})
+        .then(function(response) {
+            console.log(response);
+            var pages = response.query.pages;
+            for (var page in pages) {
+                console.log(pages[page].title + ": " + pages[page].thumbnail.source);
+            }
+        })
+        .catch(function(error){console.log(error);});
 };
