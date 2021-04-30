@@ -29,7 +29,7 @@ function showPosition(position) {
             "prop": "pageimages|coordinates|categories",
             "list": "",
             "generator": "geosearch",
-            "ggscoord": "30.2711286|-97.7436995",
+            "ggscoord": userLocationLat + "|" + userLocationLong,
             "ggsradius": "10000",
             "ggslimit": "10"
     };
