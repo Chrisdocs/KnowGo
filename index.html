@@ -11,22 +11,24 @@ i<!DOCTYPE html>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="seven columns">
-
-        <header>
+    <div class="container" >
+      
+        <div class ="header">
             <h1>Weather Treasure</h1>
-        </header>
+        </div>
+        <!--input section for city-->
+        <div class="six columns">
+            <label for="cityInput">Input City Name</label>
+            <input class="u-full-width" type="city" placeholder="input city name here" id="cityInput">
+            <input class="button-primary" type="submit" value="Submit">
+          </div>
 
-        <main>
 
-            <div> <!--input section for city-->
-                <input type="text" autocomplete="off" class="search-box"
-                placeholder="search for a city..."/>
-            </div>
-
-            <div> <!--Current Weather Div-->
+        <!--Current weather div-->
+        <div class="row">
+            
+        </div>
+        <div class="one-column" id="currentW"> 
                 <div>
                     <h3></h3> <!--date title-->
                     <ul> <!--weather info container-->
@@ -35,7 +37,9 @@ i<!DOCTYPE html>
                 </div>
             </div>
 
-            <div> <!--six day future forcast container-->
+            <!-- six day forecast-->
+            <
+            <div class="six-columns" id="forecast" >
                 <div></div> <!--6 divs for each future forcast date-->
                 <div></div>
                 <div></div>
@@ -44,7 +48,7 @@ i<!DOCTYPE html>
                 <div></div>
             </div>
 
-        </main>
+    
 
     </div>
 
