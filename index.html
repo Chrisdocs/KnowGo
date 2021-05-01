@@ -14,25 +14,45 @@ i<!DOCTYPE html>
     <div class="container">
         <div class="row">
             <div class="seven columns">
-                
-            </div>
-        </div>
-        <header>
-            <input type="text" autocomplete="off" class="search-box"
-            placeholder="search for a city..."/>
 
+        <header>
+            <h1>Weather Treasure</h1>
         </header>
+
         <main>
-            <section class="location">
-                <div class="city">Austin</div>
-                <div class="date">Sunday</div>
-            </section>
+
+            <div> <!--input section for city-->
+                <input type="text" autocomplete="off" class="search-box"
+                placeholder="search for a city..."/>
+            </div>
+
+            <div> <!--Current Weather Div-->
+                <div>
+                    <h3></h3> <!--date title-->
+                    <ul> <!--weather info container-->
+                        <!--Dynamically created <li> elements for weather data-->
+                    </ul> 
+                </div>
+            </div>
+
+            <div> <!--six day future forcast container-->
+                <div></div> <!--6 divs for each future forcast date-->
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div> <!--Wiki artical list container-->
+                <ul><!--list element container-->
+                    <!--list elements and image thumbnails for wiki data input-->
+                </ul> 
+            </div>
+
         </main>
+
     </div>
-    <section class="row">
-        <div id="MONDAY">
-        </div>
-    </section>
 
     <div class="test">test the API</div>
 
