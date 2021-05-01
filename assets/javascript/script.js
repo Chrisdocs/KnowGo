@@ -1,11 +1,13 @@
-// Write a fetch request to the Giphy API
-var weatherAPI = "https://api.openweathermap.org/data/2.5/weather?q=austin,US-TX&appid=53cd6e2725805df5b134360f4870a02f";
-// Then log the response in the console
-fetch(weatherAPI).then(function(response){
-    response.json().then(function(data) {
-        console.log(data);
+var apiKey = "53cd6e2725805df5b134360f4870a02f";
+var city = "austin"
+var apiLink = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f'
+
+    // Then log the response in the console
+    fetch(apiLink).then(function(response){
+        response.json().then(function(data) {
+            console.log(data);
+        });
     });
-});
 
 var url = "https://en.wikipedia.org/w/api.php"; 
 
