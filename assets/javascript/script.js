@@ -6,6 +6,17 @@ var apiLink = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&unit
     fetch(apiLink).then(function(response){
         response.json().then(function(data) {
             console.log(data);
+
+            var currentDayWeatherDiv = document.getElementById("currentDayWeather");
+            var currentWeatherP = document.createElement("p");
+            var currentTemp = JSON.stringify(data.main.temp);
+            var tempHigh = JSON.stringify(data.main.temp_max);
+            var tempLow = JSON.stringify(data.main.temp_min);
+            var feelsLike = JSON.stringify(data.main.feels_like);
+            var humidity = JSON.stringify(data.main.humidity);
+
+            currentDayWeatherDiv.appendChild(currentWeatherP);
+            currentWeatherP.textContent = "Tempurature:" + currentTemp;
         });
     });
 
@@ -51,3 +62,4 @@ function showPosition(position) {
         })
         .catch(function(error){console.log(error);});
 };
+
