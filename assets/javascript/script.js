@@ -1,8 +1,12 @@
 //Global variables
-var apiKey = '53cd6e2725805df5b134360f4870a02f';
-var city = "austin";
+
+function getInput() {
+var city = document.getElementById("citySearch").value;
 var apiLinkCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
 var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
+var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&apiKey=Wmn5yDoRnJgyCeKcxAXGX8sd5Vq4qtwk6TIarbw6vE8"
+
+
 
     // get weather data for the current day
     fetch(apiLinkCurrent).then(function(response){
@@ -195,53 +199,55 @@ function getLocation() {
     }
 };
 
-
-function showPosition(position) {
-    var userLocationLat = position.coords.latitude;
-    var userLocationLong = position.coords.longitude;
-    console.log(userLocationLat);
-    console.log(userLocationLong);
-    
-    var params = {
-            "action": "query",
-            "format": "json",
-            "prop": "pageimages|coordinates|categories",
-            "list": "",
-            "generator": "geosearch",
-            "ggscoord": userLocationLat + "|" + userLocationLong,
-            "ggsradius": "10000",
-            "ggslimit": "10"
-    };
-    
-
-    url = url + "?origin=*";
-    Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
-    console.log(url);
-    fetch(url)
-        .then(function(response){return response.json();})
-        .then(function(response) {
-            console.log(response);
-            var pages = response.query.pages;
-            console.log(pages);
-            for (var page in pages) {
-                console.log(pages[page].title + ": " + pages[page].thumbnail.source);
-                var wikiEl = document.getElementById("wikiDataElements");
-                var wikiUl = document.createElement("ul");
-                var wikiTitleLi = document.createElement("li");
-                var wikiLinkDiv = document.createElement("div");
-                var wikiIconEl = document.createElement("div"); 
-                //append wiki icon
-                wikiEl.appendChild(wikiIconEl);
-                wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />"
-                //append title and wiki link
-                wikiEl.appendChild(wikiUl);
-                wikiUl.appendChild(wikiTitleLi);
-                wikiUl.appendChild(wikiLinkDiv);
-                wikiTitleLi.textContent = pages[page].title;
-                wikiLinkDiv.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
-            }
-        })
-        .catch(function(error){console.log(error);});
-
+fetch(apiReverseGeo).then(function(response){
+    response.json().then(function(geoLoc){
+        console.log(geoLoc)
+        var lat = geoLoc.items[0].position.lat;
+        var long = geoLoc.items[0].position.lng;
+        console.log(lat);
+        console.log(long);
+            
+            var params = {
+                "action": "query",
+                "format": "json",
+                "prop": "pageimages|coordinates|categories",
+                "list": "",
+                "generator": "geosearch",
+                "ggscoord": lat + "|" + long,
+                "ggsradius": "10000",
+                "ggslimit": "10"
+            };
+            
+            
+            url = url + "?origin=*";
+            Object.keys(params).forEach(function(key){url += "&" + key + "=" + params[key];});
+            console.log(url);
+            fetch(url)
+            .then(function(response){return response.json();})
+            .then(function(response) {
+                console.log(response);
+                var pages = response.query.pages;
+                console.log(pages);
+                for (var page in pages) {
+                    console.log(pages[page].title + ": " + pages[page].thumbnail.source);
+                    var wikiEl = document.getElementById("wikiDataElements");
+                    var wikiUl = document.createElement("ul");
+                    var wikiTitleLi = document.createElement("li");
+                    var wikiLinkDiv = document.createElement("div");
+                    var wikiIconEl = document.createElement("div"); 
+                    //append wiki icon
+                    wikiEl.appendChild(wikiIconEl);
+                    wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />"
+                    //append title and wiki link
+                    wikiEl.appendChild(wikiUl);
+                    wikiUl.appendChild(wikiTitleLi);
+                    wikiUl.appendChild(wikiLinkDiv);
+                    wikiTitleLi.textContent = pages[page].title;
+                    wikiLinkDiv.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
+                }
+            })
+            .catch(function(error){console.log(error);});
+    })
+    })
 };
-
+    

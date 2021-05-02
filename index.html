@@ -22,9 +22,11 @@ i<!DOCTYPE html>
         <main>
 
             <div> <!--input section for city-->
-                <input type="text" autocomplete="off" class="search-box"
+                <div>
+                <input id="citySearch" type="text" autocomplete="off" class="search-box"
                 placeholder="search for a city..."/>
-                <button onclick="getLocation()">Use my location</button>
+                <button type="button" onclick="getInput()">Search!</button>
+                </div>
             </div>
 
             <div> <!--Current Weather Div-->
