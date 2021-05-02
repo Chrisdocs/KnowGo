@@ -4,7 +4,7 @@ function getInput() {
 var city = document.getElementById("citySearch").value;
 var apiLinkCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
 var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
-var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&apiKey=Wmn5yDoRnJgyCeKcxAXGX8sd5Vq4qtwk6TIarbw6vE8"
+var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&apiKey=--qFmPkZBQvzRTB0q_QAkAomIwUsrQCAEXg6EvFYrPU"
 
 
 
