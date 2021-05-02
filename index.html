@@ -12,13 +12,15 @@ i<!DOCTYPE html>
 
 <body>
     <div class="container" >
-
-        <div class ="header">
+      
+        <div class ="row">
             <h1>Weather Treasure</h1>
         </div>
+        <!--input section for city-->
+        
 
-        <div> <!--input section for city-->
-            <div class="six columns">
+         <!--input section for city-->
+        <div class="one-column">
             <label for="cityInput">Input City Name</label>
             <input class="u-full-width" id="citySearch" type="city" autocomplete="off" class="search-box"
             placeholder="search for a city..."/>
@@ -27,64 +29,88 @@ i<!DOCTYPE html>
         </div>
 
         <div class="row">
-            
-        </div>
-        <div class="one-column" id="currentW"> 
-                <div>
-                    <h3></h3> <!--date title-->
-                    <div id="currentIcon">
-
-                    </div>
+            <div class="one-column" id="currentW"> 
+                <!--current forecast card-->
+                <div class="card currentForecast">
+                    <!--date/title-->
+                    <h3 class="card-title text-center">Current Forecast
+                        <!-- current forecast here-->
+                    </h3>
                     <ul id="currentUl"> <!--weather info container-->
                         <!--Dynamically created <li> elements for weather data-->
                     </ul> 
+                    
+                         
                 </div>
             </div>
 
-            <div> <!--six day future forcast container-->
-                <div> <!--6 divs for each future forcast date-->
-                    <ul id="d1Ul">
+        </div>
+        
+        <!-- six day forecast starts here-->
+        <div class="row">
+            <!-- six day forecast-->
+            <div class="one-column" id="forecast" >
+                <h3 class="card-title sixDayCard text-center"> 6 Day Forecast</h3>
+                    <div class="row">
+                        <div class="six-columns sixDayApp">
+                            
+                            <div> <!--6 divs for each future forcast date-->
+                                <ul id="d1Ul">
+            
+                                </ul>
+                            </div> 
+            
+                            <div>
+                                <ul id="d2Ul">
+                                    
+                                </ul>
+                            </div>
+            
+                            <div>
+                                <ul id="d3Ul">
+                                
+                                </ul>
+                            </div>
+            
+                            <div>
+                                <ul id="d4Ul">
+                                
+                                </ul>  
+                            </div>
+            
+                            <div>
+                                <ul id="d5Ul">
+                                
+                                </ul>
+                            </div>
+            
+                            <div>
+                                <ul id="d6Ul">
+                                
+                                </ul>
+                            </div>
+                        </div>
+                        </div>
 
-                    </ul>
-                </div> 
-
-                <div>
-                    <ul id="d2Ul">
-                        
-                    </ul>
-                </div>
-
-                <div>
-                    <ul id="d3Ul">
+                    </div>
                     
-                    </ul>
-                </div>
+            
+        </div>
+       
 
-                <div>
-                    <ul id="d4Ul">
-                    
-                    </ul>  
-                </div>
-
-                <div>
-                    <ul id="d5Ul">
-                    
-                    </ul>
-                </div>
-
-                <div>
-                    <ul id="d6Ul">
-                    
-                    </ul>
-                </div>
-            </div>
-
-            <div id="wikiData">
+        <div class="row">
+            <div class="one-column" id="wikiData">
                 <div id="wikiDataElements">
 
                 </div>
-            </div>
+        </div>
 
+        </div>
+        
+
+        
+
+           
     
 
     </div>
