@@ -11,15 +11,18 @@ i<!DOCTYPE html>
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="seven columns">
+    <div class="container" >
 
-        <header>
+        <div class ="header">
             <h1>Weather Treasure</h1>
-        </header>
+        </div>
+        <!--input section for city-->
+        <div class="six columns">
+            <label for="cityInput">Input City Name</label>
+            <input class="u-full-width" type="city" placeholder="input city name here" id="cityInput">
+            <input class="button-primary" type="submit" value="Submit">
+        </div>
 
-        <main>
 
             <div> <!--input section for city-->
                 <div>
@@ -29,7 +32,10 @@ i<!DOCTYPE html>
                 </div>
             </div>
 
-            <div> <!--Current Weather Div-->
+        <div class="row">
+            
+        </div>
+        <div class="one-column" id="currentW"> 
                 <div>
                     <h3></h3> <!--date title-->
                     <div id="currentIcon">
@@ -85,7 +91,7 @@ i<!DOCTYPE html>
                 </div>
             </div>
 
-        </main>
+    
 
     </div>
 
