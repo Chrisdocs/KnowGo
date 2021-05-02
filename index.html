@@ -24,12 +24,16 @@ i<!DOCTYPE html>
             <div> <!--input section for city-->
                 <input type="text" autocomplete="off" class="search-box"
                 placeholder="search for a city..."/>
+                <button onclick="getLocation()">Use my location</button>
             </div>
 
             <div> <!--Current Weather Div-->
                 <div>
                     <h3></h3> <!--date title-->
-                    <ul> <!--weather info container-->
+                    <div id="currentIcon">
+
+                    </div>
+                    <ul id="currentUl"> <!--weather info container-->
                         <!--Dynamically created <li> elements for weather data-->
                     </ul> 
                 </div>
@@ -38,7 +42,7 @@ i<!DOCTYPE html>
             <div> <!--six day future forcast container-->
                 <div> <!--6 divs for each future forcast date-->
                     <ul id="d1Ul">
-                        
+
                     </ul>
                 </div> 
 
@@ -77,11 +81,7 @@ i<!DOCTYPE html>
 
     </div>
 
-    <div class="test">test the API</div>
 
-    <button onclick="getLocation()">Use my location</button>
-
-    <div id="currentDayWeather"></div>
 
     <script src="./assets/javascript/script.js"></script>
 </body>

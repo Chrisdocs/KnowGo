@@ -8,15 +8,17 @@ var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city
     fetch(apiLinkCurrent).then(function(response){
         response.json().then(function(data) {
             console.log(data);
-
+            //current day weather variables
             var currentDayWeatherDiv = document.getElementById("currentDayWeather");
             var currentWeatherP = document.createElement("p");
             var currentTemp = "Current Tempurature: " + JSON.stringify(data.main.temp);
             var tempHigh = "High Tempurature: " + JSON.stringify(data.main.temp_max);
             var tempLow = "Low Tempurature: " + JSON.stringify(data.main.temp_min);
             var feelsLike = "Feels like: " + JSON.stringify(data.main.feels_like);
-            var humidity = "humidity: " + JSON.stringify(data.main.humidity);
+            var humidity = "humidity: " + JSON.stringify(data.main.humidity) + "%";
             var clouds = JSON.stringify(data.clouds.all) + "% coverage";
+            var weatherCurrent = "Current weather: " + data.weather[0].description;
+            var weatherCurrentIcon = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
 
             console.log(currentTemp);
             console.log(tempHigh);
@@ -24,10 +26,37 @@ var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city
             console.log(feelsLike);
             console.log(humidity);
             console.log(clouds);
+            console.log(weatherCurrent);
+            console.log(weatherCurrentIcon);
 
-
-            currentDayWeatherDiv.appendChild(currentWeatherP);
-            currentWeatherP.textContent = "Tempurature:" + currentTemp;
+            //input data into HTML
+            var currentHighLi = document.createElement("li");
+            var currentLowLi = document.createElement("li");
+            var currentWeatherLi = document.createElement("li");
+            var currentWeatherIconImg = document.createElement("img");
+            var currentHumidityLi = document.createElement("li");
+            var currentCloudCoverageLi = document.createElement("li");
+            var currentFeelsLikeLi = document.createElement("li");
+            var currentTempLi = document.createElement("li");
+            //append current weather icon
+            var currentImgDiv = document.getElementById("currentIcon");
+            currentImgDiv.innerHTML = "<img src=" + weatherCurrentIcon + ">"
+            //append current weather data
+            var getCurrentUl = document.getElementById("currentUl");
+            getCurrentUl.appendChild(currentTempLi);
+            currentTempLi.textContent = currentTemp;
+            getCurrentUl.appendChild(currentHighLi);
+            currentHighLi.textContent = tempHigh;
+            getCurrentUl.appendChild(currentLowLi);
+            currentLowLi.textContent = tempLow;
+            getCurrentUl.appendChild(currentFeelsLikeLi);
+            currentFeelsLikeLi.textContent = feelsLike;
+            getCurrentUl.appendChild(currentHumidityLi);
+            currentHumidityLi.textContent = humidity;
+            getCurrentUl.appendChild(currentWeatherLi);
+            currentWeatherLi.textContent = weatherCurrent;
+            getCurrentUl.appendChild(currentCloudCoverageLi);
+            currentCloudCoverageLi.textContent = clouds;
         });
     });
 
@@ -40,55 +69,31 @@ var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city
             var dayOneTempLow = "Low: " + data.list[3].main.temp_min;
             var dayOneWeather = "Weather: " + data.list[4].weather[0].description;
             var dayOneWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[4].weather[0].icon + "@2x.png";
-            console.log(dayOneTempHigh);
-            console.log(dayOneTempLow);
-            console.log(dayOneWeather);
-            console.log(dayOneWeatherIcon);
             //get day 2 forcast data
             var dayTwoTempHigh = "High: " + data.list[14].main.temp_max;
             var dayTwoTempLow = "Low: " + data.list[11].main.temp_min;
             var dayTwoWeather = "Weather: " + data.list[10].weather[0].description;
             var dayTwoWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[10].weather[0].icon + "@2x.png";
-            console.log(dayTwoTempHigh);
-            console.log(dayTwoTempLow);
-            console.log(dayTwoWeather);
-            console.log(dayTwoWeatherIcon);
             //get day 3 forcast data
             var dayThreeTempHigh = "High: " + data.list[22].main.temp_max;
             var dayThreeTempLow = "Low: " + data.list[19].main.temp_min;
             var dayThreeWeather = "Weather: " + data.list[20].weather[0].description;
             var dayThreeWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[20].weather[0].icon + "@2x.png";
-            console.log(dayThreeTempHigh);
-            console.log(dayThreeTempLow);
-            console.log(dayThreeWeather);
-            console.log(dayThreeWeatherIcon);
             //get day 4 forcast data
             var dayFourTempHigh = "High: " + data.list[30].main.temp_max;
             var dayFourTempLow = "Low: " + data.list[27].main.temp_min;
             var dayFourWeather = "Weather: " + data.list[28].weather[0].description;
             var dayFourWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[28].weather[0].icon + "@2x.png";
-            console.log(dayFourTempHigh);
-            console.log(dayFourTempLow);
-            console.log(dayFourWeather);
-            console.log(dayFourWeatherIcon);
             //get day 5 forcast data
             var dayFiveTempHigh = "High: " + data.list[38].main.temp_max;
             var dayFiveTempLow = "Low: " + data.list[35].main.temp_min;
             var dayFiveWeather = "Weather: " + data.list[35].weather[0].description;
             var dayFiveWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[35].weather[0].icon + "@2x.png";
-            console.log(dayFiveTempHigh);
-            console.log(dayFiveTempLow);
-            console.log(dayFiveWeather);
-            console.log(dayFiveWeatherIcon);
             //get day 6 forcast data
             var daySixTempHigh = "High: " + data.list[39].main.temp_max;
             var daySixTempLow = "Low: " + data.list[39].main.temp_min;
             var daySixWeather = "Weather: " + data.list[39].weather[0].description;
             var daySixWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + "@2x.png";
-            console.log(daySixTempHigh);
-            console.log(daySixTempLow);
-            console.log(daySixWeather);
-            console.log(daySixWeatherIcon);
 
             //get the elements and input append them accordingly
 
