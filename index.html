@@ -13,11 +13,11 @@ i<!DOCTYPE html>
 <body>
     <div class="container" >
       
-        <div class ="header">
+        <div class ="row">
             <h1>Weather Treasure</h1>
         </div>
         <!--input section for city-->
-        <div class="six columns">
+        <div class="one-column">
             <label for="cityInput">Input City Name</label>
             <input class="u-full-width" type="city" placeholder="input city name here" id="cityInput">
             <input class="button-primary" type="submit" value="Submit">
@@ -26,28 +26,37 @@ i<!DOCTYPE html>
 
         <!--Current weather div-->
         <div class="row">
-            
-        </div>
-        <div class="one-column" id="currentW"> 
-                <div>
-                    <h3></h3> <!--date title-->
-                    <ul> <!--weather info container-->
-                        <!--Dynamically created <li> elements for weather data-->
-                    </ul> 
+            <div class="one-column" id="currentW"> 
+                <!--current forecast card-->
+                <div class="card currentForecast">
+                    <!--date/title-->
+                    <h3 class="card-title text-center">Current Forecast
+                        <!-- current forecast here-->
+                    </h3>
+                         
                 </div>
             </div>
 
+        </div>
+        
+        <!-- six day forecast starts here-->
+        <div class="row">
             <!-- six day forecast-->
-            <
-            <div class="six-columns" id="forecast" >
-                <div></div> <!--6 divs for each future forcast date-->
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
+            <div class="one-column" id="forecast" >
+                <h3 class="card-title sixDayCard text-center"> 6 Day Forecast</h3>
+                    <div class="row">
+                        <div class="six-columns sixDayApp">
+                            
+                        </div>
+
+                    </div>
+                    
             </div>
 
+
+        </div>
+
+           
     
 
     </div>
