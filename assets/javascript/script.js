@@ -91,6 +91,91 @@ var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city
             console.log(daySixWeatherIcon);
 
             //get the elements and input append them accordingly
+
+            //day one forcast
+            var dayOneLi1 = document.createElement("li");
+            var dayOneLi2 = document.createElement("li");
+            var dayOneLi3 = document.createElement("li");
+            var dayOneIcon = document.createElement("div");
+            var dayOneUl = document.getElementById("d1Ul");
+            dayOneUl.appendChild(dayOneIcon);
+            dayOneIcon.innerHTML = "<img src=" + dayOneWeatherIcon + ">";
+            dayOneUl.appendChild(dayOneLi1);
+            dayOneLi1.textContent = dayOneTempHigh;
+            dayOneUl.appendChild(dayOneLi2);
+            dayOneLi2.textContent = dayOneTempLow;
+            dayOneUl.appendChild(dayOneLi3);
+            dayOneLi3.textContent = dayOneWeather;
+            //day 2 forcast
+            var dayTwoLi1 = document.createElement("li");
+            var dayTwoLi2 = document.createElement("li");
+            var dayTwoLi3 = document.createElement("li");
+            var dayTwoIcon = document.createElement("div");
+            var dayTwoUl = document.getElementById("d2Ul");
+            dayTwoUl.appendChild(dayTwoIcon);
+            dayTwoIcon.innerHTML = "<img src=" + dayTwoWeatherIcon + ">";
+            dayTwoUl.appendChild(dayTwoLi1);
+            dayTwoLi1.textContent = dayTwoTempHigh;
+            dayTwoUl.appendChild(dayTwoLi2);
+            dayTwoLi2.textContent = dayTwoTempLow;
+            dayTwoUl.appendChild(dayTwoLi3);
+            dayTwoLi3.textContent = dayTwoWeather;
+            //day 3 forcast
+            var dayThreeLi1 = document.createElement("li");
+            var dayThreeLi2 = document.createElement("li");
+            var dayThreeLi3 = document.createElement("li");
+            var dayThreeIcon = document.createElement("div");
+            var dayThreeUl = document.getElementById("d3Ul");
+            dayThreeUl.appendChild(dayThreeIcon);
+            dayThreeIcon.innerHTML = "<img src=" + dayThreeWeatherIcon + ">";
+            dayThreeUl.appendChild(dayThreeLi1);
+            dayThreeLi1.textContent = dayThreeTempHigh;
+            dayThreeUl.appendChild(dayThreeLi2);
+            dayThreeLi2.textContent = dayThreeTempLow;
+            dayThreeUl.appendChild(dayThreeLi3);
+            dayThreeLi3.textContent = dayThreeWeather;
+            //day 4 forcast
+            var dayFourLi1 = document.createElement("li");
+            var dayFourLi2 = document.createElement("li");
+            var dayFourLi3 = document.createElement("li");
+            var dayFourIcon = document.createElement("div");
+            var dayFourUl = document.getElementById("d4Ul");
+            dayFourUl.appendChild(dayFourIcon);
+            dayFourIcon.innerHTML = "<img src=" + dayFourWeatherIcon + ">";
+            dayFourUl.appendChild(dayFourLi1);
+            dayFourLi1.textContent = dayFourTempHigh;
+            dayFourUl.appendChild(dayFourLi2);
+            dayFourLi2.textContent = dayFourTempLow;
+            dayFourUl.appendChild(dayFourLi3);
+            dayFourLi3.textContent = dayFourWeather;
+            //day 5 forcast
+            var dayFiveLi1 = document.createElement("li");
+            var dayFiveLi2 = document.createElement("li");
+            var dayFiveLi3 = document.createElement("li");
+            var dayFiveIcon = document.createElement("div");
+            var dayFiveUl = document.getElementById("d5Ul");
+            dayFiveUl.appendChild(dayFiveIcon);
+            dayFiveIcon.innerHTML = "<img src=" + dayFiveWeatherIcon + ">";
+            dayFiveUl.appendChild(dayFiveLi1);
+            dayFiveLi1.textContent = dayFiveTempHigh;
+            dayFiveUl.appendChild(dayFiveLi2);
+            dayFiveLi2.textContent = dayFiveTempLow;
+            dayFiveUl.appendChild(dayFiveLi3);
+            dayFiveLi3.textContent = dayFiveWeather;
+            //day 6 forcast
+            var daySixLi1 = document.createElement("li");
+            var daySixLi2 = document.createElement("li");
+            var daySixLi3 = document.createElement("li");
+            var daySixIcon = document.createElement("div");
+            var daySixUl = document.getElementById("d6Ul");
+            daySixUl.appendChild(daySixIcon);
+            daySixIcon.innerHTML = "<img src=" + daySixWeatherIcon + ">";
+            daySixUl.appendChild(daySixLi1);
+            daySixLi1.textContent = daySixTempHigh;
+            daySixUl.appendChild(daySixLi2);
+            daySixLi2.textContent = daySixTempLow;
+            daySixUl.appendChild(daySixLi3);
+            daySixLi3.textContent = daySixWeather;
         });
     });
 
