@@ -195,6 +195,7 @@ function getLocation() {
     }
 };
 
+
 function showPosition(position) {
     var userLocationLat = position.coords.latitude;
     var userLocationLong = position.coords.longitude;
@@ -221,10 +222,26 @@ function showPosition(position) {
         .then(function(response) {
             console.log(response);
             var pages = response.query.pages;
+            console.log(pages);
             for (var page in pages) {
                 console.log(pages[page].title + ": " + pages[page].thumbnail.source);
+                var wikiEl = document.getElementById("wikiDataElements");
+                var wikiUl = document.createElement("ul");
+                var wikiTitleLi = document.createElement("li");
+                var wikiLinkDiv = document.createElement("div");
+                var wikiIconEl = document.createElement("div"); 
+                //append wiki icon
+                wikiEl.appendChild(wikiIconEl);
+                wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />"
+                //append title and wiki link
+                wikiEl.appendChild(wikiUl);
+                wikiUl.appendChild(wikiTitleLi);
+                wikiUl.appendChild(wikiLinkDiv);
+                wikiTitleLi.textContent = pages[page].title;
+                wikiLinkDiv.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
             }
         })
         .catch(function(error){console.log(error);});
+
 };
 
