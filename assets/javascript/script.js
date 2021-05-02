@@ -5,7 +5,8 @@ var city = document.getElementById("citySearch").value;
 var apiLinkCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
 var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
 var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&apiKey=Wmn5yDoRnJgyCeKcxAXGX8sd5Vq4qtwk6TIarbw6vE8"
-
+var today = new Date();
+var dayOfMonth = today.getUTCDate();
 
 
     // get weather data for the current day
@@ -23,6 +24,10 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
             var clouds = JSON.stringify(data.clouds.all) + "% coverage";
             var weatherCurrent = "Current weather: " + data.weather[0].description;
             var weatherCurrentIcon = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
+            var inputDate= "Date:" + JSON.stringify(data.dt);
+            var today = new Date();
+            var dayOfMonth = today.getUTCDate();
+
 
             console.log(currentTemp);
             console.log(tempHigh);
@@ -32,6 +37,8 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
             console.log(clouds);
             console.log(weatherCurrent);
             console.log(weatherCurrentIcon);
+            console.log(inputDate);
+            console.log(dayOfMonth);
 
             //input data into HTML
             var currentHighLi = document.createElement("li");
@@ -42,6 +49,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
             var currentCloudCoverageLi = document.createElement("li");
             var currentFeelsLikeLi = document.createElement("li");
             var currentTempLi = document.createElement("li");
+            var inputDateLi = document.createElement("li");
             //append current weather icon
             var currentImgDiv = document.getElementById("currentIcon");
             currentImgDiv.innerHTML = "<img src=" + weatherCurrentIcon + ">"
@@ -61,6 +69,10 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
             currentWeatherLi.textContent = weatherCurrent;
             getCurrentUl.appendChild(currentCloudCoverageLi);
             currentCloudCoverageLi.textContent = clouds;
+            //append date
+            var getinputDateLi = document.getElementById("currentIcon")
+            getinputDateLi.appendChild(inputDateLi);
+            inputDateLi.textContent = inputDate;
         });
     });
 
