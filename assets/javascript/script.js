@@ -89,6 +89,8 @@ var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city
             console.log(daySixTempLow);
             console.log(daySixWeather);
             console.log(daySixWeatherIcon);
+
+            //get the elements and input append them accordingly
         });
     });
 
