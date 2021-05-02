@@ -23,8 +23,15 @@ i<!DOCTYPE html>
             <input class="button-primary" type="submit" value="Submit">
           </div>
 
+        <div> <!--input section for city-->
+            <div class="six columns">
+            <label for="cityInput">Input City Name</label>
+            <input class="u-full-width" id="citySearch" type="city" autocomplete="off" class="search-box"
+            placeholder="search for a city..."/>
+            <button class="button-primary" type="button" onclick="getInput()">Search!</button>
+            </div>
+        </div>
 
-        <!--Current weather div-->
         <div class="row">
             <div class="one-column" id="currentW"> 
                 <!--current forecast card-->
@@ -33,6 +40,10 @@ i<!DOCTYPE html>
                     <h3 class="card-title text-center">Current Forecast
                         <!-- current forecast here-->
                     </h3>
+                    <ul id="currentUl"> <!--weather info container-->
+                        <!--Dynamically created <li> elements for weather data-->
+                    </ul> 
+                    
                          
                 </div>
             </div>
@@ -47,25 +58,66 @@ i<!DOCTYPE html>
                     <div class="row">
                         <div class="six-columns sixDayApp">
                             
+                            <div> <!--6 divs for each future forcast date-->
+                                <ul id="d1Ul">
+            
+                                </ul>
+                            </div> 
+            
+                            <div>
+                                <ul id="d2Ul">
+                                    
+                                </ul>
+                            </div>
+            
+                            <div>
+                                <ul id="d3Ul">
+                                
+                                </ul>
+                            </div>
+            
+                            <div>
+                                <ul id="d4Ul">
+                                
+                                </ul>  
+                            </div>
+            
+                            <div>
+                                <ul id="d5Ul">
+                                
+                                </ul>
+                            </div>
+            
+                            <div>
+                                <ul id="d6Ul">
+                                
+                                </ul>
+                            </div>
+                        </div>
                         </div>
 
                     </div>
                     
-            </div>
-
-
+            
         </div>
+       
+
+            
+        <div id="wikiData">
+                <div id="wikiDataElements">
+
+                </div>
+        </div>
+
+
+        
 
            
     
 
     </div>
 
-    <div class="test">test the API</div>
 
-    <button onclick="getLocation()">Use my location</button>
-
-    <div id="currentDayWeather"></div>
 
     <script src="./assets/javascript/script.js"></script>
 </body>
