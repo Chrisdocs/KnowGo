@@ -1,3 +1,41 @@
 h1 {
     text-align: center;
 }
+.currentW {
+    text-align: center;
+}
+.row{
+    display: center;
+    text-align: center;
+    
+}
+.row-3{
+    display: inline-flex;
+    justify-content: space-between;
+    border-color: black;
+    border: 10px;
+}
+
+.six-columns{
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+    .row-3{
+        display: list-item;
+    }
+}
+
+.forecast {
+    border-style: solid;
+    border-width: 1px;
+    color: black;
+    display: list-item;
+}
+
+    @media (max-width: 900px) {
+    .row-3{
+        display: list-item;
+    }
+}
