@@ -12,14 +12,14 @@
 
 <body>
     <div class="container" >
-      
+
         <div class ="row">
             <h1>Weather Treasure</h1>
         </div>
         <!--input section for city-->
         
 
-         <!--input section for city-->
+        <!--input section for city-->
         <div class="one-column">
             <label for="cityInput">Input City Name</label>
             <input class="u-full-width" id="citySearch" type="city" autocomplete="off" class="search-box"
@@ -31,7 +31,8 @@
         <div class="row">
             <div class="two-columns" id="currentW"> 
                 <!--current forecast card-->
-                
+                <div class="card currentForecast">
+                    <!--date/title-->
                     <h3 class="card-title text-center">Current Forecast
                         <!-- current forecast here-->
                     </h3>
@@ -45,10 +46,7 @@
                             <!--Dynamically created <li> elements for weather data-->
                         </ul> 
                     </div>
-                    
-                        
-                    
-                    
+
         </div>
 
         
@@ -99,7 +97,6 @@
                         </div>
                     </div>     
         </div>
-       
 
         
         <div id="wikiData">
@@ -116,13 +113,16 @@
 
         
 
-           
     
 
     </div>
 
 
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0/build/global/luxon.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
     <script src="./assets/javascript/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </body>
 </html>
