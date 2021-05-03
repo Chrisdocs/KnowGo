@@ -32,14 +32,19 @@ li{
 }
 
 .currentIcon {
-    display: flex;
+    
     padding:50px;
 }
-
+.locationData {
+    display: flex;
+}
 
 @media (max-width: 900px) {
     .six-columns{
         display: list-item;
+    }
+    .locationData{
+        display:list-item ;
     }
 
 }
