@@ -1,58 +1,94 @@
-//Global variables
+//date cdn setup
+let DateTime = luxon.DateTime;
+
+var dateMil = DateTime.now('HH:ss').hour;
+console.log(dateMil);
+
+var dtfull = DateTime.fromObject({zone: 'America/Los_Angeles', numberingSystem: 'beng'})
+
+DateTime.fromISO("2017-05-15")          //=> May 15, 2017 at midnight
+DateTime.fromISO("2017-05-15T08:30:00") //=> May 15, 2017 at 8:30
+
+var dt = DateTime.now();
+
+var year = dt.year;
+console.log("The year is " + year);
+var month = dt.month;
+console.log("The month is " + month);
+// var week = dt.weekday;
+// // console.log("The day of the week is " + week);
+var day = dt.day;
+console.log("The day is " + day);
+// var hour = dt.hour;
+// console.log("The hour is " + hour);
+// var minute = dt.minute;
+// console.log("The minut is " + minute);
+// var second = dt.second;
+// console.log("the second is " + second);
+
+var todaySimple = month + "/" + day  + "/" + year;
+
+console.log(todaySimple);
 
 function getInput() {
-    var city = document.getElementById("citySearch").value;
-    var apiLinkCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
-    var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
-    var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&apiKey=--qFmPkZBQvzRTB0q_QAkAomIwUsrQCAEXg6EvFYrPU"
-    
-    
-    
-        // get weather data for the current day
-        fetch(apiLinkCurrent).then(function(response){
-            response.json().then(function(data) {
-                console.log(data);
-                //current day weather variables
-                var currentDayWeatherDiv = document.getElementById("currentDayWeather");
-                var currentWeatherP = document.createElement("p");
-                var currentTemp = "Current Tempurature: " + JSON.stringify(data.main.temp);
-                var tempHigh = "High Tempurature: " + JSON.stringify(data.main.temp_max);
-                var tempLow = "Low Tempurature: " + JSON.stringify(data.main.temp_min);
-                var feelsLike = "Feels like: " + JSON.stringify(data.main.feels_like);
-                var humidity = "humidity: " + JSON.stringify(data.main.humidity) + "%";
-                var clouds = JSON.stringify(data.clouds.all) + "% coverage";
-                var weatherCurrent = "Current weather: " + data.weather[0].description;
-                var weatherCurrentIcon = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
-    
-                //input data into HTML
-                var currentHighLi = document.createElement("li");
-                var currentLowLi = document.createElement("li");
-                var currentWeatherLi = document.createElement("li");
-                var currentWeatherIconImg = document.createElement("img");
-                var currentHumidityLi = document.createElement("li");
-                var currentCloudCoverageLi = document.createElement("li");
-                var currentFeelsLikeLi = document.createElement("li");
-                var currentTempLi = document.createElement("li");
-                //append current weather icon
-                var currentImgDiv = document.getElementById("currentIcon");
-                    currentImgDiv.innerHTML = "<img src=" + weatherCurrentIcon + ">"
-                //append current weather data
-                var getCurrentUl = document.getElementById("currentUl");
-                    getCurrentUl.appendChild(currentTempLi);
-                    currentTempLi.textContent = currentTemp;
-                    getCurrentUl.appendChild(currentHighLi);
-                    currentHighLi.textContent = tempHigh;
-                    getCurrentUl.appendChild(currentLowLi);
-                    currentLowLi.textContent = tempLow;
-                    getCurrentUl.appendChild(currentFeelsLikeLi);
-                    currentFeelsLikeLi.textContent = feelsLike;
-                    getCurrentUl.appendChild(currentHumidityLi);
-                    currentHumidityLi.textContent = humidity;
-                    getCurrentUl.appendChild(currentWeatherLi);
-                    currentWeatherLi.textContent = weatherCurrent;
-                    getCurrentUl.appendChild(currentCloudCoverageLi);
-                    currentCloudCoverageLi.textContent = clouds;
-            });
+var city = document.getElementById("citySearch").value;
+var apiLinkCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
+var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
+var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&apiKey=--qFmPkZBQvzRTB0q_QAkAomIwUsrQCAEXg6EvFYrPU"
+var today = new Date();
+var dayOfMonth = today.getUTCDate();
+
+
+    // get weather data for the current day
+    fetch(apiLinkCurrent).then(function(response){
+        response.json().then(function(data) {
+            console.log(data);
+            //current day weather variables
+            var currentDayWeatherDiv = document.getElementById("currentDayWeather");
+            var currentWeatherP = document.createElement("p");
+            var currentTemp = "Current Tempurature: " + JSON.stringify(data.main.temp);
+            var tempHigh = "High Tempurature: " + JSON.stringify(data.main.temp_max);
+            var tempLow = "Low Tempurature: " + JSON.stringify(data.main.temp_min);
+            var feelsLike = "Feels like: " + JSON.stringify(data.main.feels_like);
+            var humidity = "humidity: " + JSON.stringify(data.main.humidity) + "%";
+            var clouds = JSON.stringify(data.clouds.all) + "% coverage";
+            var weatherCurrent = "Current weather: " + data.weather[0].description;
+            var weatherCurrentIcon = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
+            var inputDate= "Date:" + JSON.stringify(data.dt);
+
+            //input data into HTML
+            var currentHighLi = document.createElement("li");
+            var currentLowLi = document.createElement("li");
+            var currentWeatherLi = document.createElement("li");
+            var currentWeatherIconImg = document.createElement("img");
+            var currentHumidityLi = document.createElement("li");
+            var currentCloudCoverageLi = document.createElement("li");
+            var currentFeelsLikeLi = document.createElement("li");
+            var currentTempLi = document.createElement("li");
+            var inputDateLi = document.createElement("li");
+            //append current weather icon
+            var currentImgDiv = document.getElementById("currentIcon");
+            currentImgDiv.innerHTML = "<img src=" + weatherCurrentIcon + ">"
+            //append current weather data
+            var getCurrentUl = document.getElementById("currentUl");
+            getCurrentUl.appendChild(currentTempLi);
+            currentTempLi.textContent = currentTemp;
+            getCurrentUl.appendChild(currentHighLi);
+            currentHighLi.textContent = tempHigh;
+            getCurrentUl.appendChild(currentLowLi);
+            currentLowLi.textContent = tempLow;
+            getCurrentUl.appendChild(currentFeelsLikeLi);
+            currentFeelsLikeLi.textContent = feelsLike;
+            getCurrentUl.appendChild(currentHumidityLi);
+            currentHumidityLi.textContent = humidity;
+            getCurrentUl.appendChild(currentWeatherLi);
+            currentWeatherLi.textContent = weatherCurrent;
+            getCurrentUl.appendChild(currentCloudCoverageLi);
+            currentCloudCoverageLi.textContent = clouds;
+            //append date
+            var getinputDateLi = document.getElementById("currentIcon")
+            getinputDateLi.appendChild(inputDateLi);
+            inputDateLi.textContent = todaySimple;
         });
     
         //Get weather for the future forcast
@@ -96,8 +132,11 @@ function getInput() {
                 var dayOneLi1 = document.createElement("li");
                 var dayOneLi2 = document.createElement("li");
                 var dayOneLi3 = document.createElement("li");
+                var timeElOne = document.createElement("h6");
                 var dayOneIcon = document.createElement("div");
                 var dayOneUl = document.getElementById("d1Ul");
+                    dayOneUl.appendChild(timeElOne);
+                    timeElOne.textContent = month + "/" + (day + 1)  + "/" + year;
                     dayOneUl.appendChild(dayOneIcon);
                     dayOneIcon.innerHTML = "<img src=" + dayOneWeatherIcon + ">";
                     dayOneUl.appendChild(dayOneLi1);
@@ -110,8 +149,11 @@ function getInput() {
                 var dayTwoLi1 = document.createElement("li");
                 var dayTwoLi2 = document.createElement("li");
                 var dayTwoLi3 = document.createElement("li");
+                var timeElTwo = document.createElement("h6");
                 var dayTwoIcon = document.createElement("div");
                 var dayTwoUl = document.getElementById("d2Ul");
+                    dayTwoUl.appendChild(timeElTwo);
+                    timeElTwo.textContent = month + "/" + (day + 2)  + "/" + year;
                     dayTwoUl.appendChild(dayTwoIcon);
                     dayTwoIcon.innerHTML = "<img src=" + dayTwoWeatherIcon + ">";
                     dayTwoUl.appendChild(dayTwoLi1);
@@ -124,8 +166,11 @@ function getInput() {
                 var dayThreeLi1 = document.createElement("li");
                 var dayThreeLi2 = document.createElement("li");
                 var dayThreeLi3 = document.createElement("li");
+                var timeElThree = document.createElement("h6");
                 var dayThreeIcon = document.createElement("div");
                 var dayThreeUl = document.getElementById("d3Ul");
+                    dayThreeUl.appendChild(timeElThree);
+                    timeElThree.textContent = month + "/" + (day + 3)  + "/" + year;
                     dayThreeUl.appendChild(dayThreeIcon);
                     dayThreeIcon.innerHTML = "<img src=" + dayThreeWeatherIcon + ">";
                     dayThreeUl.appendChild(dayThreeLi1);
@@ -138,8 +183,11 @@ function getInput() {
                 var dayFourLi1 = document.createElement("li");
                 var dayFourLi2 = document.createElement("li");
                 var dayFourLi3 = document.createElement("li");
+                var timeElFour = document.createElement("h6");
                 var dayFourIcon = document.createElement("div");
                 var dayFourUl = document.getElementById("d4Ul");
+                    dayFourUl.appendChild(timeElFour);
+                    timeElFour.textContent = month + "/" + (day + 4)  + "/" + year;
                     dayFourUl.appendChild(dayFourIcon);
                     dayFourIcon.innerHTML = "<img src=" + dayFourWeatherIcon + ">";
                     dayFourUl.appendChild(dayFourLi1);
@@ -152,8 +200,11 @@ function getInput() {
                 var dayFiveLi1 = document.createElement("li");
                 var dayFiveLi2 = document.createElement("li");
                 var dayFiveLi3 = document.createElement("li");
+                var timeElFive = document.createElement("h6");
                 var dayFiveIcon = document.createElement("div");
                 var dayFiveUl = document.getElementById("d5Ul");
+                    dayFiveUl.appendChild(timeElFive);
+                    timeElFive.textContent = month + "/" + (day + 5)  + "/" + year;
                     dayFiveUl.appendChild(dayFiveIcon);
                     dayFiveIcon.innerHTML = "<img src=" + dayFiveWeatherIcon + ">";
                     dayFiveUl.appendChild(dayFiveLi1);
@@ -166,8 +217,11 @@ function getInput() {
                 var daySixLi1 = document.createElement("li");
                 var daySixLi2 = document.createElement("li");
                 var daySixLi3 = document.createElement("li");
+                var timeElSix = document.createElement("h6");
                 var daySixIcon = document.createElement("div");
                 var daySixUl = document.getElementById("d6Ul");
+                    daySixUl.appendChild(timeElSix);
+                    timeElSix.textContent = month + "/" + (day + 6)  + "/" + year;
                     daySixUl.appendChild(daySixIcon);
                     daySixIcon.innerHTML = "<img src=" + daySixWeatherIcon + ">";
                     daySixUl.appendChild(daySixLi1);
@@ -240,5 +294,5 @@ function getInput() {
                 .catch(function(error){console.log(error);});
         })
         })
-    };
-        
+    });
+}   
