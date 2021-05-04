@@ -52,7 +52,7 @@ var dayOfMonth = today.getUTCDate();
             var feelsLike = "Feels like: " + JSON.stringify(data.main.feels_like);
             var humidity = "humidity: " + JSON.stringify(data.main.humidity) + "%";
             var clouds = JSON.stringify(data.clouds.all) + "% coverage";
-            var weatherCurrent = "Current weather: " + data.weather[0].description;
+            var weatherCurrent = data.weather[0].description;
             var weatherCurrentIcon = "http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png"
             var inputDate= "Date:" + JSON.stringify(data.dt);
 
@@ -98,32 +98,32 @@ var dayOfMonth = today.getUTCDate();
                 //get day 1 forcast data
                 var dayOneTempHigh = "High: " + data.list[6].main.temp_max;
                 var dayOneTempLow = "Low: " + data.list[3].main.temp_min;
-                var dayOneWeather = "Weather: " + data.list[4].weather[0].description;
+                var dayOneWeather = data.list[4].weather[0].description;
                 var dayOneWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[4].weather[0].icon + "@2x.png";
                 //get day 2 forcast data
                 var dayTwoTempHigh = "High: " + data.list[14].main.temp_max;
                 var dayTwoTempLow = "Low: " + data.list[11].main.temp_min;
-                var dayTwoWeather = "Weather: " + data.list[10].weather[0].description;
+                var dayTwoWeather = data.list[10].weather[0].description;
                 var dayTwoWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[10].weather[0].icon + "@2x.png";
                 //get day 3 forcast data
                 var dayThreeTempHigh = "High: " + data.list[22].main.temp_max;
                 var dayThreeTempLow = "Low: " + data.list[19].main.temp_min;
-                var dayThreeWeather = "Weather: " + data.list[20].weather[0].description;
+                var dayThreeWeather = data.list[20].weather[0].description;
                 var dayThreeWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[20].weather[0].icon + "@2x.png";
                 //get day 4 forcast data
                 var dayFourTempHigh = "High: " + data.list[30].main.temp_max;
                 var dayFourTempLow = "Low: " + data.list[27].main.temp_min;
-                var dayFourWeather = "Weather: " + data.list[28].weather[0].description;
+                var dayFourWeather = data.list[28].weather[0].description;
                 var dayFourWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[28].weather[0].icon + "@2x.png";
                 //get day 5 forcast data
                 var dayFiveTempHigh = "High: " + data.list[38].main.temp_max;
                 var dayFiveTempLow = "Low: " + data.list[35].main.temp_min;
-                var dayFiveWeather = "Weather: " + data.list[35].weather[0].description;
+                var dayFiveWeather = data.list[35].weather[0].description;
                 var dayFiveWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[35].weather[0].icon + "@2x.png";
                 //get day 6 forcast data
                 var daySixTempHigh = "High: " + data.list[39].main.temp_max;
                 var daySixTempLow = "Low: " + data.list[39].main.temp_min;
-                var daySixWeather = "Weather: " + data.list[39].weather[0].description;
+                var daySixWeather = data.list[39].weather[0].description;
                 var daySixWeatherIcon = "http://openweathermap.org/img/wn/" + data.list[39].weather[0].icon + "@2x.png";
     
                 //get the elements and input append them accordingly
