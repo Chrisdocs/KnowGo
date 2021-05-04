@@ -1,7 +1,17 @@
+/*header syles */
+
 h1 {
     text-align: center;
+    
+    text-shadow: 1px 1px 3px grey;
+    color: #fcc201;
 }
+h3{
+    text-align: center;
+    text-shadow: 1px 1px 3px grey;
+    color: #0086c6;
 
+}
 .row{
     display: center;
     text-align: center;
@@ -40,6 +50,12 @@ li{
     justify-content: space-between;
     list-style: none;
     flex-wrap: wrap;
+}
+.wikicard{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 @media (max-width: 900px) {
