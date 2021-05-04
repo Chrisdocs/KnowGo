@@ -30,7 +30,8 @@ var todaySimple = month + "/" + day  + "/" + year;
 
 console.log(todaySimple);
 
-function getInput() {
+function getInput(cityinput) {
+
 var city = document.getElementById("citySearch").value;
 var apiLinkCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
 var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
@@ -38,11 +39,9 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
 var today = new Date();
 var dayOfMonth = today.getUTCDate();
 
-
     // get weather data for the current day
     fetch(apiLinkCurrent).then(function(response){
         response.json().then(function(data) {
-            console.log(data);
             //current day weather variables
             var currentDayWeatherDiv = document.getElementById("currentDayWeather");
             var currentWeatherP = document.createElement("p");
@@ -94,7 +93,9 @@ var dayOfMonth = today.getUTCDate();
         //Get weather for the future forcast
         fetch(apiLinkForcast).then(function(response){
             response.json().then(function(data) {
-                console.log(data);
+                if (data) {
+
+                }
                 //get day 1 forcast data
                 var dayOneTempHigh = "High: " + data.list[6].main.temp_max;
                 var dayOneTempLow = "Low: " + data.list[3].main.temp_min;
@@ -282,17 +283,17 @@ var dayOfMonth = today.getUTCDate();
                         var wikiIconEl = document.createElement("div"); 
                         //append wiki icon
                             wikiEl.appendChild(wikiIconEl);
-                            wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />"
+                            wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />" + "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
                             //append title and wiki link
                             wikiEl.appendChild(wikiUl);
                             wikiUl.appendChild(wikiTitleLi);
                             wikiUl.appendChild(wikiLinkDiv);
                             wikiTitleLi.textContent = pages[page].title;
-                            wikiLinkDiv.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
+                    //         wikiLinkDiv.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
                     }
                 })
                 .catch(function(error){console.log(error);});
         })
         })
     });
-}   
+};
