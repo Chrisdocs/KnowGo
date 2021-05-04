@@ -14,6 +14,7 @@ h1 {
 .six-columns{
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
     
 }
 
@@ -23,12 +24,13 @@ li{
 
 .forecastBox {
     margin:10px;
-    padding: 5px;
+    padding: 20px;
 }
 
 .currentBox {
     display: inline-flex;
     justify-content: space-between;
+    margin:50px;
 }
 
 .currentIcon {
@@ -36,7 +38,10 @@ li{
     padding:50px;
 }
 .locationData {
-    display: flex;
+    display: inline-flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 900px) {
