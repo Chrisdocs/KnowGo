@@ -41,6 +41,9 @@ li{
     list-style: none;
     flex-wrap: wrap;
 }
+.currentW{
+    text-align: center;
+}
 
 @media (max-width: 900px) {
     .six-columns{
