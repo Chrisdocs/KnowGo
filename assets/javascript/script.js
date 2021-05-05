@@ -36,8 +36,6 @@ var city = document.getElementById("citySearch").value;
 var apiLinkCurrent = 'https://api.openweathermap.org/data/2.5/weather?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
 var apiLinkForcast = 'https://api.openweathermap.org/data/2.5/forecast?q=' +city+ '&units=imperial&appid=53cd6e2725805df5b134360f4870a02f';
 var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&apiKey=--qFmPkZBQvzRTB0q_QAkAomIwUsrQCAEXg6EvFYrPU"
-var today = new Date();
-var dayOfMonth = today.getUTCDate();
 
     // get weather data for the current day
     fetch(apiLinkCurrent).then(function(response){
@@ -93,8 +91,8 @@ var dayOfMonth = today.getUTCDate();
         //Get weather for the future forcast
         fetch(apiLinkForcast).then(function(response){
             response.json().then(function(data) {
-                if (data) {
-
+                if (data = false) {
+                    window.location.reload();
                 }
                 //get day 1 forcast data
                 var dayOneTempHigh = "High: " + data.list[6].main.temp_max;
