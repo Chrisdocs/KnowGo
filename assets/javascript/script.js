@@ -86,6 +86,10 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
             var getinputDateLi = document.getElementById("currentIcon")
             getinputDateLi.appendChild(inputDateLi);
             inputDateLi.textContent = todaySimple;
+
+            //assigns a background style to the current weather element
+            var currentBackground = document.getElementById("currentElStyle");
+            currentElStyle.className = "currentBox";
         });
     
         //Get weather for the future forcast
