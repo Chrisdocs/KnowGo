@@ -52,14 +52,14 @@ li{
     padding: 20px;
 }
 
-.locationData {
+/*.locationData {
     display: inline-flex;
     justify-content: space-between;
     list-style: none;
     flex-wrap: wrap;
     padding-top: 50px;
     
-}
+} */
 .wikicard{
     display: flex;
     flex-wrap: wrap;
@@ -77,6 +77,9 @@ li{
     border: solid 5px lightskyblue;
     border-radius: 20px;
 }
+.locationStyle {
+    background: indianred;
+}
 
 @media (max-width: 900px) {
     .six-columns{
@@ -87,6 +90,10 @@ li{
     }
     .currentBox{
         display: block;
+    }
+    .currentIcon{
+        display: center;
+        padding: 0;
     }
 
 }

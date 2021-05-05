@@ -280,6 +280,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                         var wikiTitleLi = document.createElement("li");
                         var wikiLinkDiv = document.createElement("div");
                         var wikiIconEl = document.createElement("div"); 
+                        wikiLinkDiv.className = "locatationStyle";
                         //append wiki icon
                             wikiEl.appendChild(wikiIconEl);
                             wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />" + "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
