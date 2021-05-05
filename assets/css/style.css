@@ -42,7 +42,7 @@ li{
 
 .currentIcon {
     
-    padding:0px 200px;
+    padding:50px 200px;
 }
 
 
@@ -59,7 +59,9 @@ li{
     flex-wrap: wrap;
     padding-top: 50px;
     
-} */
+    
+}
+*/
 .wikicard{
     display: flex;
     flex-wrap: wrap;
