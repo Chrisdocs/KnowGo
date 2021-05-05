@@ -1,8 +1,16 @@
+/*header syles */
+
 h1 {
     text-align: center;
+    
+    text-shadow: 1px 1px 3px grey;
+    color: #fcc201;
 }
-.currentW {
+h3{
     text-align: center;
+    text-shadow: 1px 1px 3px grey;
+    color: #0086c6;
+
 }
 .row{
     display: center;
@@ -10,36 +18,66 @@ h1 {
     
 }
 
-
+/* 6 day forecast display */
 .six-columns{
     display: inline-flex;
     justify-content: space-between;
+    align-items: center;
     
 }
-
+/* current forecast styles */
+.currentUl{
+    padding: 50px;
+}
 li{
-    list-style: none;
+    list-style:none;
 }
 
-.forecastBox {
-    margin:10px;
-    padding: 5px;
-}
 
 .currentBox {
     display: inline-flex;
     justify-content: space-between;
+    margin:50px;
 }
 
 .currentIcon {
-    display: flex;
-    padding:50px;
+    
+    padding:0px 200px;
 }
 
+
+
+.forecastBox {
+    margin:10px;
+    padding: 20px;
+}
+
+.locationData {
+    display: inline-flex;
+    justify-content: space-between;
+    list-style: none;
+    flex-wrap: wrap;
+    padding-top: 50px;
+    
+}
+.wikicard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0px 600px;
+}
+.img{padding:20px;}
 
 @media (max-width: 900px) {
     .six-columns{
         display: list-item;
+    }
+    .locationData{
+        display:list-item ;
+    }
+    .currentBox{
+        display: block;
     }
 
 }

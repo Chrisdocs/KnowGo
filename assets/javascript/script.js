@@ -276,15 +276,16 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                         console.log(pages[page].title + ": " + pages[page].thumbnail.source);
                         var wikiEl = document.getElementById("wikiDataElements");
                         var wikiUl = document.createElement("ul");
-                        var wikiTitleLi = document.createElement("li");
+                        var wikiTitleLi = document.createElement("div");
                         var wikiLinkDiv = document.createElement("div");
+                        
                         var wikiIconEl = document.createElement("div"); 
                         //append wiki icon
                             wikiEl.appendChild(wikiIconEl);
                             wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />" + "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
                             //append title and wiki link
                             wikiEl.appendChild(wikiUl);
-                            wikiUl.appendChild(wikiTitleLi);
+                            //wikiUl.appendChild(wikiTitleLi);
                             wikiUl.appendChild(wikiLinkDiv);
                             wikiTitleLi.textContent = pages[page].title;
                     //         wikiLinkDiv.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
