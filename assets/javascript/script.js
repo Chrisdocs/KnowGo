@@ -131,6 +131,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                 var timeElOne = document.createElement("h6");
                 var dayOneIcon = document.createElement("div");
                 var dayOneUl = document.getElementById("d1Ul");
+                    dayOneUl.className = "forcastStyle";
                     dayOneUl.appendChild(timeElOne);
                     timeElOne.textContent = month + "/" + (day + 1)  + "/" + year;
                     dayOneUl.appendChild(dayOneIcon);
@@ -148,6 +149,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                 var timeElTwo = document.createElement("h6");
                 var dayTwoIcon = document.createElement("div");
                 var dayTwoUl = document.getElementById("d2Ul");
+                    dayTwoUl.className = "forcastStyle";
                     dayTwoUl.appendChild(timeElTwo);
                     timeElTwo.textContent = month + "/" + (day + 2)  + "/" + year;
                     dayTwoUl.appendChild(dayTwoIcon);
@@ -165,6 +167,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                 var timeElThree = document.createElement("h6");
                 var dayThreeIcon = document.createElement("div");
                 var dayThreeUl = document.getElementById("d3Ul");
+                    dayThreeUl.className = "forcastStyle";
                     dayThreeUl.appendChild(timeElThree);
                     timeElThree.textContent = month + "/" + (day + 3)  + "/" + year;
                     dayThreeUl.appendChild(dayThreeIcon);
@@ -182,6 +185,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                 var timeElFour = document.createElement("h6");
                 var dayFourIcon = document.createElement("div");
                 var dayFourUl = document.getElementById("d4Ul");
+                    dayFourUl.className = "forcastStyle";
                     dayFourUl.appendChild(timeElFour);
                     timeElFour.textContent = month + "/" + (day + 4)  + "/" + year;
                     dayFourUl.appendChild(dayFourIcon);
@@ -199,6 +203,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                 var timeElFive = document.createElement("h6");
                 var dayFiveIcon = document.createElement("div");
                 var dayFiveUl = document.getElementById("d5Ul");
+                    dayFiveUl.className = "forcastStyle";
                     dayFiveUl.appendChild(timeElFive);
                     timeElFive.textContent = month + "/" + (day + 5)  + "/" + year;
                     dayFiveUl.appendChild(dayFiveIcon);
@@ -216,6 +221,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                 var timeElSix = document.createElement("h6");
                 var daySixIcon = document.createElement("div");
                 var daySixUl = document.getElementById("d6Ul");
+                    daySixUl.className = "forcastStyle";
                     daySixUl.appendChild(timeElSix);
                     timeElSix.textContent = month + "/" + (day + 6)  + "/" + year;
                     daySixUl.appendChild(daySixIcon);
