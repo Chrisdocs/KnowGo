@@ -51,24 +51,20 @@ li{
     margin:10px;
     padding: 20px;
 }
+/* wiki styles */
 
-.locationData {
-    display: inline-flex;
-    justify-content: space-between;
-    list-style: none;
-    flex-wrap: wrap;
-    padding-top: 50px;
-    
-    
-}
-.wikicard{
+.wikiCard{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
     margin: 0px 600px;
+    justify-content: space-evenly;
+    align-items: baseline;
 }
-.img{padding:20px;}
+.img
+    {padding:20px;
+}
+
+/* media queries */
 
 @media (max-width: 900px) {
     .six-columns{
