@@ -79,6 +79,19 @@ li{
     {padding:20px;
 }
 
+/* history styles */
+h6{
+    text-shadow: 1px 1px 3px grey;
+    color: #0086c6;
+
+}
+.historyUl{
+    display: inline-flex;
+}
+.historyStyle{
+    padding-left: 25px;
+    padding-right: 25px;
+}
 /* media queries */
 
 @media (max-width: 900px) {
@@ -96,4 +109,3 @@ li{
         padding: 0;
     }
 
-}

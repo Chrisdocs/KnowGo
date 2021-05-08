@@ -239,6 +239,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
         var input = document.getElementById('citySearch');
         console.log(input.value);
         var inputHistory = document.createElement("li");
+        inputHistory.className = "historyStyle";
         historyUl.appendChild(inputHistory);
         inputHistory.textContent = input.value;
 
