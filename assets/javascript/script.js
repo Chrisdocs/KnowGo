@@ -1,3 +1,4 @@
+
 //date cdn setup
 let DateTime = luxon.DateTime;
 
@@ -234,9 +235,20 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                     daySixLi3.textContent = daySixWeather;
             });
         });
-    
-    
+        // begining of history
+        var input = document.getElementById('citySearch');
+        console.log(input.value);
+        var inputHistory = document.createElement("li");
+        historyUl.appendChild(inputHistory);
+        inputHistory.textContent = input.value;
+
+        
+
+
+        
     var url = "https://en.wikipedia.org/w/api.php"; 
+
+
     
     function getLocation() {
         if (navigator.geolocation) {
