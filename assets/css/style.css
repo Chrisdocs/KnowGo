@@ -9,7 +9,7 @@ h1 {
 h3{
     text-align: center;
     text-shadow: 1px 1px 3px grey;
-    color: #0086c6;
+    color: #fcc201;
 
 }
 .row{
@@ -82,7 +82,7 @@ li{
 /* history styles */
 h6{
     text-shadow: 1px 1px 3px grey;
-    color: #0086c6;
+    color: #fcc201;
 
 }
 .historyUl{
