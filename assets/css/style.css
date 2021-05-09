@@ -56,24 +56,16 @@ li{
 
 .wikiCard{
     display: flex;
-    flex-wrap: wrap;
-    margin: 0px 600px;
-    justify-content: space-evenly;
-    align-items: baseline;
-}
+    
 
-.img{
-    padding:20px;
-    height: 300px;
-    width: 300px;
-}
 
+}
 .forcastStyle {
     background: lightskyblue;
     border: solid 5px lightskyblue;
     border-radius: 20px;
 }
-.locationStyle {
+.wiki {
     background: indianred;
 }
 .img
@@ -81,7 +73,7 @@ li{
 }
 
 /* history styles */
-h6{
+.h6{
     text-shadow: 1px 1px 3px grey;
     color: #0086c6;
 
