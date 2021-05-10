@@ -16,8 +16,8 @@ APIs - https://api.openweathermap.org/data/2.5/weather?q=
 
 
 ## Website
-Repo link - https://github.com/Chrisdocs/weatherornot
-Site link - https://chrisdocs.github.io/weatherornot/
+Repo link - https://github.com/Chrisdocs/KnowGo
+Site link - https://chrisdocs.github.io/KnowGo/
 
 ## Website Image
 ![](assets/graphic/scrnshot.png)
