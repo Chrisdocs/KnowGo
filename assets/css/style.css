@@ -1,5 +1,7 @@
 /*header syles */
-
+body{
+    width: 100%;
+}
 h1 {
     text-align: center;
     
@@ -9,7 +11,8 @@ h1 {
 h3{
     text-align: center;
     text-shadow: 1px 1px 3px grey;
-    color: #0086c6;
+    font-style: oblique;
+    color: #fcc201;
 
 }
 .row{
@@ -56,28 +59,35 @@ li{
 
 .wikiCard{
     display: flex;
-    flex-wrap: wrap;
-    margin: 0px 600px;
-    justify-content: space-evenly;
-    align-items: baseline;
-}
+    
 
-.img{
-    padding:20px;
-}
 
+}
 .forcastStyle {
     background: lightskyblue;
     border: solid 5px lightskyblue;
     border-radius: 20px;
 }
-.locationStyle {
+.wiki {
     background: indianred;
 }
 .img
     {padding:20px;
 }
 
+/* history styles */
+h6{
+    text-shadow: 1px 1px 3px grey;
+    color: #fcc201;
+
+}
+.historyUl{
+    display: inline-flex;
+}
+.historyStyle{
+    padding-left: 25px;
+    padding-right: 25px;
+}
 /* media queries */
 
 @media (max-width: 900px) {
@@ -94,5 +104,4 @@ li{
         display: center;
         padding: 0;
     }
-
 }

@@ -1,3 +1,4 @@
+
 //date cdn setup
 let DateTime = luxon.DateTime;
 
@@ -238,9 +239,21 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                     daySixLi3.textContent = daySixWeather;
             });
         });
-    
-    
+        // begining of history
+        var input = document.getElementById('citySearch');
+        console.log(input.value);
+        var inputHistory = document.createElement("li");
+        inputHistory.className = "historyStyle";
+        historyUl.appendChild(inputHistory);
+        inputHistory.textContent = input.value;
+
+        
+
+
+        
     var url = "https://en.wikipedia.org/w/api.php"; 
+
+
     
     function getLocation() {
         if (navigator.geolocation) {
@@ -284,7 +297,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                         var wikiTitleLi = document.createElement("li");
                         var wikiLinkDiv = document.createElement("div");
                         var wikiIconEl = document.createElement("div"); 
-                        wikiLinkDiv.className = "locatationStyle";
+                        wikiLinkDiv.className = "locationStyle";
                         //append wiki icon
                             wikiEl.appendChild(wikiIconEl);
                             wikiIconEl.innerHTML = "<img src=" + pages[page].thumbnail.source + " />" + "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
@@ -293,6 +306,7 @@ var apiReverseGeo = "https://geocode.search.hereapi.com/v1/geocode?q=" +city+ "&
                             wikiUl.appendChild(wikiTitleLi);
                             wikiUl.appendChild(wikiLinkDiv);
                             wikiTitleLi.textContent = pages[page].title;
+                            wikiLinkDiv.className= "locationStyle";
                     //         wikiLinkDiv.innerHTML = "<a href='https://en.wikipedia.org/wiki/" + pages[page].title + "'" + ">" + "Visit the wiki! -> " + pages[page].title + "</a>";
                     }
                 })
